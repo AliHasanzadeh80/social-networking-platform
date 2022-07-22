@@ -1,28 +1,22 @@
+from multiprocessing.spawn import import_main_path
+from turtle import pos
 from django.shortcuts import render
+from .models import Post
+
 
 def home(request):
+    posts = Post.objects.all()
     context = {
         'title': 'home',
-        'posts':  [
-            {
-                'author': 'CoreyMS',
-                'title': 'Blog Post 1',
-                'content': 'First post content',
-                'date_posted': 'August 27, 2018'
-            },
-            {
-                'author': 'Jane Doe',
-                'title': 'Blog Post 2',
-                'content': 'Second post content',
-                'date_posted': 'August 28, 2018'
-            }
-        ]
-
+        'posts':  posts
     }
+
     return render(request, 'blog/home.html', context)
+
 
 def about(request):
     context = {
         'title': 'about'
     }
+    
     return render(request, 'blog/about.html', context)
