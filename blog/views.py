@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
+from django.contrib.auth.models import User
+
+from django.core.paginator import Paginator
 
 
 # def home(request):
@@ -19,6 +22,19 @@ class PostList(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_added']
+    paginate_by = 5
+
+
+class UserPostList(ListView):
+    model = Post
+    template_name = 'blog/user-posts.html'
+    context_object_name = 'posts'
+    ordering = ['-date_added']
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = User.objects.get(username=self.kwargs['username'])
+        return Post.objects.filter(author=user)
     
 
 class PostDetailView(DetailView):
