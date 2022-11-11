@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: hasanzadehali214@gmail.com
+Date: Wed, 09 Nov 2022 18:06:59 -0000
+Message-ID: <166801721922.19588.1929588454810754637@DESKTOP-5R1S0TH>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/account/password-reset-confirm/MQ/ben5dn-24048542c235d44c81b90d75588e6a31/
+
+Your username, in case you’ve forgotten: asus
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
